@@ -1,0 +1,29 @@
+export TMOUT=864000
+export HOME=/home/yanghh
+export CUDA_HOME=/usr/local/cuda-8.0
+
+# CUDA Toolkit
+export LD_LIBRART_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+export PATH=$CUDA_HOME/bin:$HOME/apps/anaconda3/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.dotfiles/zsh/.oh-my-zsh
+
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="intheloop"
+
+# Disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.  
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+alias ohmytmux="tmux -f ~/.dotfiles/tmux/tmux.conf new-session -A -s default"

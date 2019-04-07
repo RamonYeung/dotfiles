@@ -1,0 +1,54 @@
+" => General Settingsi --------------------------------------------------------
+set number 
+set relativenumber
+set history=1000
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=80
+set expandtab
+set autoindent
+set fileformat=unix
+
+syntax on
+" Search Python scripts only
+set suffixesadd=.py  
+" Ignore pyc files when expanding wildcards
+set wildignore=*.pyc 
+" Don't show .pyc in file lists
+let g:netrw_list_hide= '.*\.pyc$'
+set smarttab
+" show a visual line under the cursor's current line
+set cursorline
+" Show the 120th char column.
+set colorcolumn=80
+highlight ColorColumn ctermbg=3
+
+" => Plugins ------------------------------------------------------------------
+" For Vundle, a vim plugin manager.
+set nocompatible            " Forget about VI
+filetype off                " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
+call vundle#begin('~/.dotfiles/vim/plugins')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'scrooloose/nerdtree'
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+" Experimental Settings
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+let g:SimpylFold_docstring_preview=1
+

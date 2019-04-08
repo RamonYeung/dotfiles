@@ -1,32 +1,35 @@
 " => General Settingsi --------------------------------------------------------
-set nu
+set number
 set relativenumber
 set history=1000
 set encoding=utf-8
-let python_highlight_all=1
+syntax on
 
+" show a visual line under the cursor's current line
+set cursorline
+
+set smarttab
+" Show the 80th char column.
+set colorcolumn=80
+highlight ColorColumn ctermbg=3
+
+" => Python Settings ---------------------------------------------------------
+let python_highlight_all=1
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
-syntax on
 " Search Python scripts only
 set suffixesadd=.py  
 " Ignore pyc files when expanding wildcards
 set wildignore=*.pyc 
 " Don't show .pyc in file lists
 let g:netrw_list_hide= '.*\.pyc$'
-set smarttab
-" show a visual line under the cursor's current line
-set cursorline
-" Show the 120th char column.
-set colorcolumn=80
-highlight ColorColumn ctermbg=3
 
 " => Plugins ------------------------------------------------------------------
 " For Vundle, a vim plugin manager.
@@ -42,20 +45,48 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'powerline/powerline'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-" Experimental Settings
-" Enable folding
+" => Plugin Settings --------------------------------------------------
+" SimplyFold Settings
 set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
-"YouCompletMe Settings
+" YouCompletMe Settings
 let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" NerdTree Settings
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" => Customize Python Utils --------------------------------------------------
+nnoremap <leader>r :call CompileAndRun()<CR>
+nnoremap <leader>s :AsyncStop<CR>
+
+func! CompileAndRun()
+	exec "w"
+	if &filetype == 'python'
+		if search("@profile")
+			exec "AsyncRun kernprof -l -v %"
+                        exec "copen"
+                        exec "wincmd p"
+                elseif search("set_trace()")
+			exec "!python3 %"
+                else
+                        exec "AsyncRun -raw python3 %"
+                        exec "copen"
+                        exec "wincmd p"
+                endif
+        endif
+
+endfunc
 
 

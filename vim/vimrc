@@ -1,18 +1,18 @@
-" => General Settingsi --------------------------------------------------------
+" => General Settings --------------------------------------------------------
 set number
 set relativenumber
 set history=1000
 set encoding=utf-8
 syntax on
+" set termguicolors
 
 " show a visual line under the cursor's current line
 set cursorline
-
 set smarttab
 " Show the 80th char column.
 set colorcolumn=80
 highlight ColorColumn ctermbg=3
-
+set shiftwidth=4
 " => Python Settings ---------------------------------------------------------
 let python_highlight_all=1
 au BufNewFile,BufRead *.py
@@ -39,19 +39,17 @@ filetype off                " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
 call vundle#begin('~/.dotfiles/vim/plugins')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Python Plugins
+Plugin 'tmhedberg/SimpylFold'  
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'powerline/powerline'
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 " => Plugin Settings --------------------------------------------------
 " SimplyFold Settings
@@ -60,12 +58,21 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_docstring=0
 " YouCompletMe Settings
 let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " NerdTree Settings
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+" Airline Settings
+set laststatus=2
+set t_Co=256
+set noshowmode
+" Airline Theme Settings
+let g:airline_theme='bubblegum'
 
 " => Customize Python Utils --------------------------------------------------
 nnoremap <leader>r :call CompileAndRun()<CR>
@@ -89,4 +96,16 @@ func! CompileAndRun()
 
 endfunc
 
+" indent and unindent for NORMAL and INSERT mode
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>
+
+
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
 

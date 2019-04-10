@@ -48,6 +48,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tmhedberg/SimpylFold'  
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 filetype plugin indent on    " required
 

@@ -1,0 +1,30 @@
+[submodule "vim/plugins/indentpython.vim"]
+	path = vim/plugins/indentpython.vim
+	url = https://github.com/vim-scripts/indentpython.vim
+[submodule "vim/plugins/vim-airline-themes"]
+	path = vim/plugins/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/plugins/vim-airline"]
+	path = vim/plugins/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/plugins/asyncrun.vim"]
+	path = vim/plugins/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "vim/plugins/SimpylFold"]
+	path = vim/plugins/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold
+[submodule "vim/plugins/Vundle.vim"]
+	path = vim/plugins/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
+[submodule "vim/plugins/YouCompleteMe"]
+	path = vim/plugins/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/plugins/nerdtree"]
+	path = vim/plugins/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/plugins/auto-pairs"]
+	path = vim/plugins/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh/

@@ -31,3 +31,6 @@
 [submodule "vim/plugins/indentLine"]
 	path = vim/plugins/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "vim/plugins/ultisnips"]
+	path = vim/plugins/ultisnips
+	url = https://github.com/SirVer/ultisnips

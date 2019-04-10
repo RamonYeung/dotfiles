@@ -1,6 +1,7 @@
 export TMOUT=864000
 export HOME=/home/yanghh
 export CUDA_HOME=/usr/local/cuda-8.0
+export VIM=$HOME/.dotfiles/vim/
 
 # CUDA Toolkit
 export LD_LIBRART_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH

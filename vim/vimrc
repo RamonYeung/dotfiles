@@ -45,6 +45,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
+Plugin 'SirVer/ultisnips'
 " Python Plugins
 Plugin 'tmhedberg/SimpylFold'  
 Plugin 'skywind3000/asyncrun.vim'
@@ -73,9 +74,14 @@ set laststatus=2
 set t_Co=256
 set noshowmode
 " Airline Theme Settings
-let g:airline_theme='bubblegum'
+let g:airline_theme = 'bubblegum'
 " indentLine Settings
-let g:indentLine_char = '┆'
+let g:indentLine_char = '|'
+" UltiSnips Settings
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:ultisnips_python_style = "google"
 
 " => Customize Python Utils --------------------------------------------------
 nnoremap <leader>r :call CompileAndRun()<CR>
@@ -99,9 +105,7 @@ func! CompileAndRun()
 
 endfunc
 
-" indent and unindent for NORMAL and INSERT mode
+" indent and unindent for NORMAL mode
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
-inoremap <S-Tab> <C-d>
-
 

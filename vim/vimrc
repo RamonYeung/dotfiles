@@ -77,6 +77,7 @@ set noshowmode
 let g:airline_theme = 'bubblegum'
 " indentLine Settings
 let g:indentLine_char = '|'
+let g:indentLine_showFirstIndentLevel=1
 " UltiSnips Settings
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"

@@ -25,7 +25,7 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH/keybinding.sh
+source ~/.dotfiles/zsh/keybinding.sh
 
-set -o vi
+set -o emacs
 alias ohmytmux="tmux -f ~/.dotfiles/tmux/tmux.conf new-session -A -s default"

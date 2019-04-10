@@ -1,38 +1,4 @@
-" => General Settings --------------------------------------------------------
-set number
-set relativenumber
-set history=1000
-set encoding=utf-8
-syntax on
-" set termguicolors
-
-" show a visual line under the cursor's current line
-set cursorline
-set smarttab
-" Show the 80th char column.
-set colorcolumn=80
-highlight ColorColumn ctermbg=3
-set shiftwidth=4
-" => Python Settings ---------------------------------------------------------
-let python_highlight_all = 1
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
-
-" Search Python scripts only
-set suffixesadd=.py  
-" Ignore pyc files when expanding wildcards
-set wildignore=*.pyc 
-" Don't show .pyc in file lists
-let g:netrw_list_hide= '.*\.pyc$'
-
 " => Plugins ------------------------------------------------------------------
-" For Vundle, a vim plugin manager.
 set nocompatible            " Forget about VI
 filetype off                " required
 
@@ -83,6 +49,40 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:ultisnips_python_style = "google"
+
+" => General Settings --------------------------------------------------------
+set number
+set relativenumber
+set history=1000
+set encoding=utf-8
+syntax on
+" set termguicolors
+
+" show a visual line under the cursor's current line
+set cursorline
+set smarttab
+" Show the 80th char column.
+set colorcolumn=80
+highlight ColorColumn ctermbg=3
+set shiftwidth=4
+
+" => Python Settings ---------------------------------------------------------
+let python_highlight_all = 1
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+" Search Python scripts only
+set suffixesadd=.py  
+" Ignore pyc files when expanding wildcards
+set wildignore=*.pyc 
+" Don't show .pyc in file lists
+let g:netrw_list_hide= '.*\.pyc$'
 
 " => Customize Python Utils --------------------------------------------------
 nnoremap <leader>r :call CompileAndRun()<CR>

@@ -10,7 +10,7 @@ bindkey "^k" up_widget
 function git_prepare() {
     if [ -z "$BUFFER" ];
 	then
-	    BUFFER="git commit -v && git push"
+	    BUFFER="git commit -v && git push origin master"
     fi
     zle accept-line
 }

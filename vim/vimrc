@@ -43,7 +43,7 @@ set noshowmode
 let g:airline_theme = 'bubblegum'
 " indentLine Settings
 let g:indentLine_char = '|'
-let g:indentLine_showFirstIndentLevel=1
+let g:indentLine_showFirstIndentLevel = 1
 " UltiSnips Settings
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
@@ -55,8 +55,7 @@ set number
 set relativenumber
 set history=1000
 set encoding=utf-8
-syntax on
-" set termguicolors
+syntax on 
 
 " show a visual line under the cursor's current line
 set cursorline
@@ -103,7 +102,6 @@ func! CompileAndRun()
                         exec "wincmd p"
                 endif
         endif
-
 endfunc
 
 " indent and unindent for NORMAL mode

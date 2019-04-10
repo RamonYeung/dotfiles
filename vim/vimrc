@@ -14,7 +14,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=3
 set shiftwidth=4
 " => Python Settings ---------------------------------------------------------
-let python_highlight_all=1
+let python_highlight_all = 1
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -44,11 +44,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
 " Python Plugins
 Plugin 'tmhedberg/SimpylFold'  
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Yggdroot/indentLine'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -58,10 +58,10 @@ set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
-let g:SimpylFold_docstring_preview=1
-let g:SimpylFold_fold_docstring=0
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_docstring = 0
 " YouCompletMe Settings
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion = 1
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " NerdTree Settings
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -74,6 +74,8 @@ set t_Co=256
 set noshowmode
 " Airline Theme Settings
 let g:airline_theme='bubblegum'
+" indentLine Settings
+let g:indentLine_char = '┆'
 
 " => Customize Python Utils --------------------------------------------------
 nnoremap <leader>r :call CompileAndRun()<CR>
@@ -102,11 +104,4 @@ nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
-
-inoremap (; (<CR>);<C-c>O
-inoremap (, (<CR>),<C-c>O
-inoremap {; {<CR>};<C-c>O
-inoremap {, {<CR>},<C-c>O
-inoremap [; [<CR>];<C-c>O
-inoremap [, [<CR>],<C-c>O
 

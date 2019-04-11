@@ -13,9 +13,6 @@
 [submodule "vim/plugins/SimpylFold"]
 	path = vim/plugins/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold
-[submodule "vim/plugins/Vundle.vim"]
-	path = vim/plugins/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
 [submodule "vim/plugins/YouCompleteMe"]
 	path = vim/plugins/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe

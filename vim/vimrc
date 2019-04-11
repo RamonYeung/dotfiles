@@ -1,23 +1,21 @@
-" => Plugins ------------------------------------------------------------------
-set nocompatible            " Forget about VI
-filetype off                " required
+" Forget about VI
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-call vundle#begin('~/.dotfiles/vim/plugins')
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
-Plugin 'SirVer/ultisnips'
+" => Plugins ------------------------------------------------------------------
+call plug#begin('~/.dotfiles/vim/plugins')
+Plug 'SirVer/ultisnips' 
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'SirVer/ultisnips'
 " Python Plugins
-Plugin 'tmhedberg/SimpylFold'  
-Plugin 'skywind3000/asyncrun.vim'
-Plugin 'vim-scripts/indentpython.vim'
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plug 'tmhedberg/SimpylFold'  
+Plug 'skywind3000/asyncrun.vim'
+Plug 'vim-scripts/indentpython.vim'
+call plug#end()
+filetype plugin indent on
 
 " => Plugin Settings --------------------------------------------------
 " SimplyFold Settings
@@ -27,9 +25,6 @@ set foldlevel=99
 nnoremap <space> za
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
-" YouCompletMe Settings
-let g:ycm_autoclose_preview_window_after_completion = 1
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " NerdTree Settings
 nnoremap <leader>n :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
@@ -44,6 +39,9 @@ let g:airline_theme = 'bubblegum'
 " indentLine Settings
 let g:indentLine_char = '|'
 let g:indentLine_showFirstIndentLevel = 1
+" YouCompletMe Settings
+let g:ycm_autoclose_preview_window_after_completion = 1
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " UltiSnips Settings
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
@@ -56,6 +54,7 @@ set relativenumber
 set history=1000
 set encoding=utf-8
 syntax on 
+set backspace=indent,eol,start
 
 " show a visual line under the cursor's current line
 set cursorline

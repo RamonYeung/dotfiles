@@ -3,13 +3,13 @@ set nocompatible
 
 " => Plugins ------------------------------------------------------------------
 call plug#begin('~/.dotfiles/vim/plugins')
-Plug 'SirVer/ultisnips' 
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'SirVer/ultisnips'
+Plug 'jiangmiao/auto-pairs'
 " Python Plugins
 Plug 'tmhedberg/SimpylFold'  
 Plug 'skywind3000/asyncrun.vim'

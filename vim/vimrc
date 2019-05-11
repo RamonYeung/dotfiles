@@ -14,6 +14,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tmhedberg/SimpylFold'  
 Plug 'skywind3000/asyncrun.vim'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
 call plug#end()
 filetype plugin indent on
 
@@ -106,4 +107,5 @@ endfunc
 " indent and unindent for NORMAL mode
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+
 

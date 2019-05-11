@@ -32,3 +32,6 @@
 [submodule "vim/plugins/ultisnips"]
 	path = vim/plugins/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/plugins/vim-flake8"]
+	path = vim/plugins/vim-flake8
+	url = https://github.com/nvie/vim-flake8

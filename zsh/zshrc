@@ -1,18 +1,19 @@
 export TMOUT=864000
-export HOME=/home/yanghh
-export CUDA_HOME=/usr/local/cuda-10.0
-export JAVA_HOME=/usr/java/jre1.8.0_211
+export HOME=/home/chensir/workspace/haihong
+
+export CUDA_HOME=/usr/local/cuda-10.1
+# export JAVA_HOME=/usr/java/jre2.8.0_211
 
 export VIM=$HOME/.dotfiles/vim/
-export VIMRUNTIME=/usr/share/vim/vim81/
+export VIMRUNTIME=/usr/share/vim/vim80/
 
 # Path
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-export PATH=$JAVA_HOME/bin:$CUDA_HOME/bin:$HOME/app/anaconda3/bin:$PATH
+export PATH=$CUDA_HOME/bin:$HOME/app/anaconda3/bin:$PATH
 export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="intheloop"
+ZSH_THEME="risto"
 
 # Disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
@@ -26,8 +27,47 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.  
 plugins=(git)
 
+export PYTHONIOENCODING=utf-8
+
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/zsh/keybinding.sh
 
 set -o emacs
 alias ohmytmux="tmux -f ~/.dotfiles/tmux/tmux.conf new-session -A -s default"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yanghh/app/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yanghh/app/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yanghh/app/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yanghh/app/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+HISTFILE=~/.histfile
+HISTSIZE=2000
+HISTFILESIZE=2000
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias nvim="VIM= VIMRUNTIME= $HOME/code/dotfiles/vim/nvim.appimage"
+alias graph="git log --all --decorate --oneline --graph"
+alias cmake="/opt/cmake/bin/cmake"
+alias ll="ls -alF"
+
